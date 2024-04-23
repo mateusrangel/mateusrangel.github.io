@@ -1,0 +1,16 @@
+.center-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#current_note{
+    color: white;
+    font-size: 30vw;
+    text-align: center;
+}
+
+body{
+    background-color: black;
+}
