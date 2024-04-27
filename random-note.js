@@ -4,7 +4,9 @@ function swapNote() {
         noteSet = shuffle(baseSet)
         nextNote = noteSet.pop()
     }
-    noteElement.textContent = nextNote
+
+    noteElement.textContent = nextNote + (chordCheckbox.checked ? get_random(chordTypes) : "")
+
 }
 
 function useSet(set) {
@@ -20,7 +22,12 @@ const shuffle = ([...array]) => {
     return array;
 };
 
+function get_random(arr) {
+    return arr[Math.floor((Math.random() * arr.length))];
+}
+
 const noteElement = document.getElementById("current_note");
+const chordCheckbox = document.querySelector("#chords");
 
 const naturals = ["A", "B", "C", "D", "E", "F", "G"]
 
@@ -28,9 +35,7 @@ const sharps = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
 const flats = ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"]
 const both = ["A", "A#", "Ab", "B", "Bb", "C", "C#", "D", "D#", "Db", "E", "Eb", "F", "F#", "G", "G#", "Gb"]
 
-const sharpsEnharmonic = ["A", "A#", "B", "B#", "C", "C#", "D", "D#", "E", "E#", "F", "F#", "G", "G#"]
-const flatsEnharmonic = ["A", "Ab", "B", "Bb", "C", "Cb", "D", "Db", "E", "Eb", "F", "Fb", "G", "Gb"]
-const bothEnharmonic = ["A", "A#", "Ab", "B", "B#", "Bb", "C", "C#", "Cb", "D", "D#", "Db", "E", "E#", "Eb", "F", "F#", "Fb", "G", "G#", "Gb"]
+const chordTypes = ["7M", "m7", "7", "°", "m(7M)", "ø", "7M(#5)"]
 
 let baseSet = naturals
 let noteSet = shuffle(baseSet);

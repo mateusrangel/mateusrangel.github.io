@@ -5,12 +5,12 @@
     transform: translate(-50%, -50%);
 }
 
-#current_note{
-    color: white;
-    font-size: 30vw;
+#current_note {
+    font-size: 20vw;
     text-align: center;
 }
 
-body{
+body {
     background-color: black;
+    color: white;
 }
